@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chiha Chayma — Portfolio animé</title>
+  <meta name="description" content="Portfolio animé de Chiha Chayma — QA, Dev, DevOps" />
+  <style>
+    :root{--bg:#071023;--card:#0e1622;--accent:#7c3aed;--accent2:#06b6d4;--muted:#94a3b8}
+    *{box-sizing:border-box}
+    html,body{height:100%} body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;background:linear-gradient(180deg,#071023 0%, #081226 80%);color:#e6eef6}
+    a{color:var(--accent2);text-decoration:none}
+    .wrap{max-width:1100px;margin:28px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent2),var(--accent));display:grid;place-items:center;font-weight:700;color:#021}
+    nav{display:flex;gap:10px}
+    .btn{padding:8px 12px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);cursor:pointer}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;margin-top:18px}
+    .intro h1{font-size:36px;margin:0}
+    .typing{color:var(--accent2);font-weight:700}
+    .roles{height:28px;margin-top:8px;color:var(--muted);font-weight:600}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:16px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+
+    /* animations */
+    .fade-in{opacity:0;transform:translateY(12px);transition:all 600ms ease-out}
+    .fade-in.visible{opacity:1;transform:none}
+    .type-cursor{border-right:2px solid var(--accent2);animation:blink 800ms steps(1) infinite}
+    @keyframes blink{50%{border-color:transparent}}
+
+    /* CV section */
+    .cv{margin-top:24px;display:grid;grid-template-columns:1fr 320px;gap:18px}
+    .cv .left{min-width:0}
+    .skill-badge{display:inline-block;margin:6px 6px 6px 0;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03)}
+
+    /* projects */
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+
+    @media (max-width:880px){.hero{grid-template-columns:1fr}.cv{grid-template-columns:1fr}.logo{width:48px;height:48px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">CC</div>
+        <div>
+          <div style="font-weight:700">Chiha Chayma</div>
+          <div style="font-size:13px;color:var(--muted)">QA • Développeuse • DevOps</div>
+        </div>
+      </div>
+      <nav>
+        <a class="btn" href="#cv">CV</a>
+        <a class="btn" href="#projects">Projets</a>
+        <a class="btn" href="#videos">Vidéos</a>
+        <a class="btn" href="#contact">Contact</a>
+        <a class="btn" href="cvchihachaima.pdf" download>Télécharger CV</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="intro">
+        <h1 class="fade-in" data-delay="0">Salut — je suis <span class="typing" id="nameTyped">Chiha Chayma</span></h1>
+        <div class="roles fade-in" data-delay="200"><span id="roleText"></span></div>
+        <p class="fade-in" data-delay="400" style="color:var(--muted);max-width:66%">Ingénieure en développement logiciel et web — expérience en automatisation QA, développement full-stack (Django/React), et pratiques DevOps (Docker, Kubernetes).</p>
+        <div style="margin-top:14px" class="fade-in" data-delay="600">
+          <a class="btn" href="#contact">Travaillons ensemble</a>
+          <a class="btn" href="#projects">Voir mes projets</a>
+        </div>
+
+        <div class="card fade-in" data-delay="800" style="margin-top:16px">
+          <strong>Compétences principales</strong>
+          <div style="margin-top:10px">
+            <span class="skill-badge">QA / Testing</span>
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">C# / .NET</span>
+            <span class="skill-badge">React / Django</span>
+            <span class="skill-badge">Docker / Kubernetes</span>
+            <span class="skill-badge">WordPress</span>
+          </div>
+        </div>
+      </div>
+
+     <aside>
+  <div class="card fade-in" data-delay="300" style="text-align:center">
+    <!-- Bloc photo carré -->
+    <div style="width:120px;height:120px;border-radius:12px;margin:0 auto;overflow:hidden">
+      <img src="images/image1.png" alt="Photo de profil" style="width:100%;height:100%;object-fit:cover">
+    </div>
+
+    <!-- Nom et infos -->
+    <h3 style="margin:12px 0 6px">Chiha Chayma</h3>
+    <div style="color:var(--muted);font-size:14px">Tunisie</div>
+    <div style="margin-top:10px;color:var(--muted);font-size:13px">
+      chihachayma58@gmail.com • +216 29 882 447
+    </div>
+  </div>
+
+  <!-- Carte liens -->
+  <div class="card fade-in" data-delay="500" style="margin-top:14px">
+    <strong>Liens</strong>
+    <div style="margin-top:10px;color:var(--muted);font-size:13px">
+      Github: <a href="https://github.com/chayma512" target="_blank">chayma512</a><br>
+      LinkedIn: <a href="https://linkedin.com/in/chihachayma" target="_blank">chihachayma</a>
+    </div>
+  </div>
+</aside>
+
+    </section>
+
+    <!-- CV détaillé extrait du PDF -->
+    <section id="cv" class="cv">
+      <div class="left">
+        <div class="card fade-in" data-delay="100">
+          <h3>Expérience</h3>
+          <ul style="color:var(--muted);">
+            <li><strong>ETIC EUROPE — Software Engineer</strong> (Feb 2024 – Dec 2024) — développement VBA, migration .NET 6, applications desktop pour labels, tests logiciels.</li>
+            <li><strong>KSARSOFT — Full-Stack Developer</strong> (Mar 2023 – Sep 2023) — Django/React, QGIS + ML sur données spatiales, PostgreSQL.</li>
+            <li><strong>TUNISAIR — DevOps Developer</strong> (Sep 2022 – Dec 2022) — Hadoop, Spark, HBase, Docker, Kubernetes.</li>
+          </ul>
+        </div>
+
+        <div class="card fade-in" data-delay="250" style="margin-top:12px">
+          <h3>Projets</h3>
+          <div style="color:var(--muted);">
+            <p><strong>WordPress & Elementor</strong> — sites e-commerce et portfolios (WAMP).</p>
+            <p><strong>Outil de web scraping</strong> — extraction et analyse de données (Python).</p>
+          </div>
+        </div>
+
+        <div class="card fade-in" data-delay="400" style="margin-top:12px">
+          <h3>Éducation</h3>
+          <div style="color:var(--muted);">
+            <p>National Diploma in Software Engineering — Polytech Private Higher Polytechnic School (2020 - 2023)</p>
+            <p>Preparatory cycle: Physics & Chemistry (2018 - 2020)</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card fade-in" data-delay="150">
+        <h4>Compétences techniques</h4>
+        <div style="color:var(--muted);margin-top:8px">
+          <div><strong>Testing:</strong> Software Testing, Selenium, Cypress, Postman</div>
+          <div style="margin-top:8px"><strong>Programming:</strong> Python, Java, JavaScript, C#, PHP, HTML/CSS, VBA</div>
+          <div style="margin-top:8px"><strong>Tools:</strong> React, Django, Node.js, .NET, WordPress, Docker, Kubernetes, MySQL, PostgreSQL, Hadoop, Spark</div>
+          <div style="margin-top:8px"><strong>Langues:</strong> Arabe (natif), Français (courant), Anglais (B2)</div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projects">
+      <h3 style="margin-top:22px">Projets</h3>
+      <div class="projects">
+        <div class="card fade-in" data-delay="100"> <strong>Application étiquettes — Givenchy</strong><p style="color:var(--muted)">C# / .NET — génération d’étiquettes industrielles.</p></div>
+        <div class="card fade-in" data-delay="200"> <strong>Transport public</strong><p style="color:var(--muted)">Django + React — QGIS, ML pour prédiction de demande.</p></div>
+        <div class="card fade-in" data-delay="300"> <strong>Big Data / DevOps</strong><p style="color:var(--muted)">Hadoop, Spark, Docker, Kubernetes — déploiement et orchestration.</p></div>
+        <div class="card fade-in" data-delay="400"> <strong>WordPress</strong><p style="color:var(--muted)">Sites e-commerce et portfolio avec Elementor.</p></div>
+      </div>
+    </section>
+
+    <section id="videos" style="margin-top:18px">
+      <h3>Application Transport Public  Django , React</h3>
+      <div class="card" style="margin-top:10px">
+        <video controls style="width:100%;max-height:360px;border-radius:8px">
+          <source src="videos/Video1.webm" type="video/webm">
+        </video>
+      </div>
+      <div class="card" style="margin-top:10px">
+    <h4>Site WordPress</h4>
+    <video controls style="width:100%;max-height:360px;border-radius:8px">
+      <source src="videos/video2.webm" type="video/webm">
+    </video>
+  </div>
+     <div class="card" style="margin-top:10px">
+    <h4>Application de Facturation (WinForms, C#)</h4>
+    <video controls style="width:100%;max-height:360px;border-radius:8px">
+      <source src="videos/video3.webm" type="video/webm">
+    </video>
+  </div>
+    <div class="card" style="margin-top:10px">
+    <h4>Analyse de Données Spatiales — QGIS & Python</h4>
+    <video controls style="width:100%;max-height:360px;border-radius:8px">
+      <source src="videos/Video4.webm" type="video/webm">
+    </video>
+  </div>
+   <div class="card" style="margin-top:10px">
+    <h4>Site WordPress</h4>
+    <video controls style="width:100%;max-height:360px;border-radius:8px">
+      <source src="videos/video2.webm" type="video/webm">
+    </video>
+   </div>
+  
+    </section>
+
+    <section id="contact" style="margin-top:18px">
+      <h3>Contact</h3>
+      <div class="card" style="margin-top:10px">
+        <p style="color:var(--muted)">Email: <a href="mailto:chihachayma58@gmail.com">chihachayma58@gmail.com</a><br>Tel: +216 29 882 447</p>
+      </div>
+    </section>
+
+    <footer style="margin-top:18px;color:var(--muted);text-align:center">© 2025 Chiha Chayma</footer>
+  </div>
+
+  <script>
+    // Typing effect for name
+    const name = 'Chiha Chayma';
+    const nameTarget = document.getElementById('nameTyped');
+    let i=0;
+    function typeName(){
+      if(i<name.length){
+        nameTarget.textContent += name[i++];
+        nameTarget.classList.add('type-cursor');
+        setTimeout(typeName, 80);
+      } else {
+        nameTarget.classList.remove('type-cursor');
+      }
+    }
+    setTimeout(typeName, 300);
+
+    // Roles rotating
+    const roles = ['QA Testeuse','Développeuse Full-Stack','DevOps','Ingénieure Logiciel'];
+    let rIndex=0; const roleEl=document.getElementById('roleText');
+    function rotateRoles(){
+      roleEl.style.opacity=0; setTimeout(()=>{
+        roleEl.textContent = roles[rIndex]; roleEl.style.opacity=1; rIndex=(rIndex+1)%roles.length;
+      },300);
+    }
+    rotateRoles(); setInterval(rotateRoles, 2500);
+
+    // Fade-in on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('visible') } })
+    },{threshold:0.15});
+    faders.forEach(f=>{obs.observe(f);});
+
+    // Staggered delays
+    document.querySelectorAll('[data-delay]').forEach(el=>{
+      const d = parseInt(el.getAttribute('data-delay'))||0; el.style.transitionDelay = (d/1000)+'s';
+    });
+  </script>
+</body>
+</html>
